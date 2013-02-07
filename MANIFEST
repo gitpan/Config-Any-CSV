@@ -1,0 +1,8 @@
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+lib/Config/Any/CSV.pm
+t/basic.t
+t/example.csv
