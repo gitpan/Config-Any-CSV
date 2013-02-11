@@ -4,5 +4,6 @@ META.yml
 Makefile.PL
 README
 lib/Config/Any/CSV.pm
+t/args.csv
 t/basic.t
 t/example.csv

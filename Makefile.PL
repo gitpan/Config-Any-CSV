@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Load CSV files as config files",
+  "ABSTRACT" => "Load CSV as config files",
   "AUTHOR" => "Jakob Voss",
   "BUILD_REQUIRES" => {
     "Config::Any" => 0,
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }
