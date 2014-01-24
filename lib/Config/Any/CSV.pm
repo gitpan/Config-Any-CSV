@@ -1,15 +1,11 @@
-package Config::Any::CSV;
-{
-  $Config::Any::CSV::VERSION = '0.03';
-}
-#ABSTRACT: Load CSV as config files
-
 use strict;
 use warnings;
+package Config::Any::CSV;
+#ABSTRACT: Load CSV as config files
+our $VERSION = '0.04'; #VERSION
+
 use v5.10;
-
 use base 'Config::Any::Base';
-
 use Text::CSV;
 
 sub load {
@@ -52,9 +48,11 @@ sub extensions {
 
 1;
 
-
 __END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -62,7 +60,7 @@ Config::Any::CSV - Load CSV as config files
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -70,7 +68,7 @@ version 0.03
  
     my $config = Config::Any->load_files({files => \@files});
 
-I recommend to use L<Config::ZOMG>:
+I recommend to use L<Config::ZOMG> for a nicer interface to Config::Any:
 
     use Config::ZOMG;
 
@@ -146,14 +144,13 @@ more ancient versions of Perl.
 
 =head1 AUTHOR
 
-Jakob Voss
+Jakob Voß
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Jakob Voss.
+This software is copyright (c) 2014 by Jakob Voß.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

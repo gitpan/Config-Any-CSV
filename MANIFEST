@@ -3,7 +3,9 @@ MANIFEST
 META.yml
 Makefile.PL
 README
+cpanfile
 lib/Config/Any/CSV.pm
 t/args.csv
+t/author-critic.t
 t/basic.t
 t/example.csv

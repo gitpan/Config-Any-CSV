@@ -10,12 +10,8 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Load CSV as config files",
-  "AUTHOR" => "Jakob Voss",
-  "BUILD_REQUIRES" => {
-    "Config::Any" => 0,
-    "Test::Deep" => 0,
-    "Test::More" => 0
-  },
+  "AUTHOR" => "Jakob Vo\x{df}",
+  "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
@@ -24,30 +20,27 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Config::Any::CSV",
   "PREREQ_PM" => {
-    "Config::Any::Base" => 0,
-    "Text::CSV" => 0,
-    "base" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "Config::Any" => 0,
+    "Text::CSV" => 0
   },
-  "VERSION" => "0.03",
+  "TEST_REQUIRES" => {},
+  "VERSION" => "0.04",
   "test" => {
     "TESTS" => "t/*.t"
   }
 );
 
 
-unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
-  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM};
-  for my $mod ( keys %$br ) {
-    if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
-    }
-    else {
-      $pp->{$mod} = $br->{$mod};
-    }
-  }
+my %FallbackPrereqs = (
+  "Config::Any" => 0,
+  "Text::CSV" => 0
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.63_03) } ) {
+  delete $WriteMakefileArgs{TEST_REQUIRES};
+  delete $WriteMakefileArgs{BUILD_REQUIRES};
+  $WriteMakefileArgs{PREREQ_PM} = \%FallbackPrereqs;
 }
 
 delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
