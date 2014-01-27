@@ -8,4 +8,5 @@ lib/Config/Any/CSV.pm
 t/args.csv
 t/author-critic.t
 t/basic.t
-t/example.csv
+t/example/example.csv
+t/example/example.json

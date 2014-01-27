@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Config::Any::CSV;
 #ABSTRACT: Load CSV as config files
-our $VERSION = '0.04'; #VERSION
+our $VERSION = '0.05'; #VERSION
 
 use v5.10;
 use base 'Config::Any::Base';
@@ -60,7 +60,7 @@ Config::Any::CSV - Load CSV as config files
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
